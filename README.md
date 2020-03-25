@@ -9,6 +9,8 @@
           (t (+ (* (car v1) (car v2)) (scalar(cdr v1) (cdr v2))))
        )
 )
+```
+```lisp
 (print(scalar '(4 2 3) '(7 3 7)))
 55
 
