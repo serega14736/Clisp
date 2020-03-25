@@ -27,7 +27,9 @@
         (t(luc (- n 1) (list s)))
     ) 
 ) 
+```
 
+```lisp
 (print (luc 1))
 (1) 
 
