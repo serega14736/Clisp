@@ -43,12 +43,14 @@
 ## 19. Определите функцию (ЛУКОВИЦА n), строящую N-уровневый вложенный список, элементом которого на самом глубоком уровне является N ##
 
 ``` lisp
-(defun luc (n &optional (s n) ) 
-    (cond 
-        ((eq n 0) s)
-        (t(luc (- n 1) (list s)))
-    ) 
-) 
+(defun lis(n)
+   (t_lis n n)
+)
+(defun t_lis(n k)
+    (cond
+        ((eq k 0) n)
+        (t ( cons (t_lis n (- k 1)) nil))
+     ))
 ```
 
 ```lisp
