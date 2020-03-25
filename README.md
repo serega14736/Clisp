@@ -30,13 +30,6 @@
 ```
 
 ```lisp
-(defun spisok(lst)
-      (cond
-         ((null lst) "список одноуровневый")
-          ((atom (car lst))(spisok(cdr lst)))
-          ("список не одноуровневый")
-       )
-)
 (print(spisok '((3))))
 "список не одноуровневый" 
 
