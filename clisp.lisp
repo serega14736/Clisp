@@ -7,8 +7,8 @@
           (t (+ (* (car v1) (car v2)) (scalar(cdr v1) (cdr v2))))
        )
 )
-;;; Test 1
 
+;;; Test 1
 (write-line "Задача 15 Test 1")
 (princ " >> '(4 2 3) '(7 3 7)")
 (print(scalar '(4 2 3) '(7 3 7)))
@@ -16,7 +16,6 @@
 (write-line "")
 
 ;;; Test 2
-
 (write-line "Задача 15 Test 2")
 (princ " >> '(0 1 2) '(1 1 1)")
 (print(scalar '(0 1 2) '(1 1 1)))
@@ -37,6 +36,7 @@
         ((eq k 0) n)
         (t ( cons (t_lis n (- k 1)) nil))
      ))
+
 ;;; Test 1
 (write-line "Задача 19 Test 1")
 (princ " >> 5 ")
@@ -72,7 +72,7 @@
 (write-line "")
 (write-line "")
 
-
+;;; Test 2
 (write-line "Задача 18 Test 2")
 (princ " >> '(1 2 3) ")
 (print(spisok '(1 2 3)))
@@ -124,7 +124,7 @@
 (write-line "")
 
 
-;;; Test 1
+;;; Test 2
 (write-line "Задача 9 Test 1")
 (princ " >> (1 2 3 4 5 6 7 8) ")
 (print(list-sublist`(1 2 3 4 5 6 7 8)))
