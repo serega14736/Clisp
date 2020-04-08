@@ -124,3 +124,39 @@
 (print(sub-lists`(1 2 3 4 5 6 7 8)))
 (write-line "")
 (write-line "")
+
+; #45
+; Определить расстояние между двумя точками. У символа (названия города) определены свойства x и y,
+; необходимо вычислить расстояние между двумя городами.
+; struct city {
+;   float x, y;
+; }
+; length_city (city, city) -> float
+
+(defun length_city (city-a city-b)
+    (sqrt (+ (expt (- (get city-a 'x) (get city-b 'x)) 2)
+        (expt (- (get city-a 'y) (get city-b 'y))  2)))
+)
+(defun distance-city (name x y)
+        (setf (get name 'x) x)
+        (setf (get name 'y) y)
+)
+
+
+;;; Test 1
+(write-line "Test 1")
+(princ ">> {0, 5} {7, 0}")
+(distance-city 'city1 0 5)
+(distance-city 'city2 7 0)
+(print (length_city 'city1 'city2))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Test 2")
+(princ ">> {32, 19} {58, 26}")
+(distance-city 'city1 32 19)
+(distance-city 'city2 58 26)
+(print (length_city 'city1 'city2))
+(write-line "")
+(write-line "")
