@@ -1,3 +1,74 @@
+;22 Задача
+;Определите функцию, которая обращает список (а b с) и разбивает его на уровни (((с) b) а).
+;( 1 2  3 4 5 6 7 8  9 ) -> (((((((((9) 8) 7) 6) 5) 4) 3) 2) 1) 
+
+(defun func-level(lst)
+      (cond
+         ((null(cdr  lst)) (cons (car lst) ()))
+         (t(list (func-level (cdr lst)) (car lst) ))
+       )
+)
+
+;;; Test 1
+(write-line "Задача 22 Test 1")
+(princ " >> ( 1 2  3 4 5 6  7 8  9 ) ")
+(print(func-level '( 1 2  3 4 5 6  7 8  9 )))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Задача 22 Test 2")
+(princ " >> ( 1  2 ) ")
+(print(func-level '( 1  2 )))
+(write-line "")
+(write-line "")
+
+
+
+; #45
+; Определить расстояние между двумя точками. У символа (названия города) определены свойства x и y,
+; необходимо вычислить расстояние между двумя городами.
+; struct city {
+;   float x, y;
+; }
+; length_city (city, city) -> float
+
+(defun length_city (city-a city-b)
+    (sqrt (+
+        (expt
+            (- (get city-a 'x) (get city-b 'x))
+        2)
+        (expt
+            (- (get city-a 'y) (get city-b 'y))
+        2)
+    ))
+)
+(defun distance-city (name x y)
+        (setf (get name 'x) x)
+        (setf (get name 'y) y)
+)
+
+
+;;; Test 1
+(write-line "Задача 45 Test 1")
+(princ ">> {0, 5} {7, 0}")
+(distance-city 'city1 0 5)
+(distance-city 'city2 7 0)
+(print (length_city 'city1 'city2))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Задача 45 Test 2")
+(princ ">> {32, 19} {58, 26}")
+(distance-city 'city1 32 19)
+(distance-city 'city2 58 26)
+(print (length_city 'city1 'city2))
+(write-line "")
+(write-line "")
+
+
+
 ; 15 Задача
 ; Определите функцию, вычисляющую скалярное произведение векторов, заданных списками целых чисел.
 ; (4 2 3) (7 3 7) -> 55
@@ -80,32 +151,6 @@
 (write-line "")
 
 
-;22 Задача
-;Определите функцию, которая обращает список (а b с) и разбивает его на уровни (((с) b) а).
-;( 1 2  3 4 5 6 7 8  9 ) -> (((((((((9) 8) 7) 6) 5) 4) 3) 2) 1) 
-
-(defun func-level(lst)
-      (cond
-         ((null(cdr  lst)) (cons (car lst) ()))
-         (t(list (func-level (cdr lst)) (car lst) ))
-       )
-)
-
-;;; Test 1
-(write-line "Задача 22 Test 1")
-(princ " >> ( 1 2  3 4 5 6  7 8  9 ) ")
-(print(func-level '( 1 2  3 4 5 6  7 8  9 )))
-(write-line "")
-(write-line "")
-
-;;; Test 2
-(write-line "Задача 22 Test 2")
-(princ " >> ( 1  2 ) ")
-(print(func-level '( 1  2 )))
-(write-line "")
-(write-line "")
-
-
 ;9 Задача
 ;Определите функцию, разделяющую исходный список на два подсписка. 
 ;В первый из них должны попасть элементы с нечетными номерами, 
@@ -130,47 +175,5 @@
 (write-line "Задача 9 Test 1")
 (princ " >> (1 2 3 4 5 6 7 8) ")
 (print(sub-lists`(1 2 3 4 5 6 7 8)))
-(write-line "")
-(write-line "")
-
-; #45
-; Определить расстояние между двумя точками. У символа (названия города) определены свойства x и y,
-; необходимо вычислить расстояние между двумя городами.
-; struct city {
-;   float x, y;
-; }
-; length_city (city, city) -> float
-
-(defun length_city (city-a city-b)
-    (sqrt (+
-        (expt
-            (- (get city-a 'x) (get city-b 'x))
-        2)
-        (expt
-            (- (get city-a 'y) (get city-b 'y))
-        2)
-    ))
-)
-(defun distance-city (name x y)
-        (setf (get name 'x) x)
-        (setf (get name 'y) y)
-)
-
-
-;;; Test 1
-(write-line "Задача 45 Test 1")
-(princ ">> {0, 5} {7, 0}")
-(distance-city 'city1 0 5)
-(distance-city 'city2 7 0)
-(print (length_city 'city1 'city2))
-(write-line "")
-(write-line "")
-
-;;; Test 2
-(write-line "Задача 45 Test 2")
-(princ ">> {32, 19} {58, 26}")
-(distance-city 'city1 32 19)
-(distance-city 'city2 58 26)
-(print (length_city 'city1 'city2))
 (write-line "")
 (write-line "")
