@@ -142,8 +142,14 @@
 ; length_city (city, city) -> float
 
 (defun length_city (city-a city-b)
-    (sqrt (+ (expt (- (get city-a 'x) (get city-b 'x)) 2)
-        (expt (- (get city-a 'y) (get city-b 'y))  2)))
+    (sqrt (+
+        (expt
+            (- (get city-a 'x) (get city-b 'x))
+        2)
+        (expt
+            (- (get city-a 'y) (get city-b 'y))
+        2)
+    ))
 )
 (defun distance-city (name x y)
         (setf (get name 'x) x)
@@ -152,7 +158,7 @@
 
 
 ;;; Test 1
-(write-line "Test 1")
+(write-line "Задача 45 Test 1")
 (princ ">> {0, 5} {7, 0}")
 (distance-city 'city1 0 5)
 (distance-city 'city2 7 0)
@@ -161,7 +167,7 @@
 (write-line "")
 
 ;;; Test 2
-(write-line "Test 2")
+(write-line "Задача 45 Test 2")
 (princ ">> {32, 19} {58, 26}")
 (distance-city 'city1 32 19)
 (distance-city 'city2 58 26)
