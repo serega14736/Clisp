@@ -83,10 +83,11 @@
 ;22 Задача
 ;Определите функцию, которая обращает список (а b с) и разбивает его на уровни (((с) b) а).
 ;( 1 2  3 4 5 6 7 8  9 ) -> (((((((((9) 8) 7) 6) 5) 4) 3) 2) 1) 
+
 (defun func-level(lst)
       (cond
          ((null(cdr  lst)) (cons (car lst) ()))
-          ((list (func-level (cdr lst)) (car lst) ))
+         (t(list (func-level (cdr lst)) (car lst) ))
        )
 )
 
@@ -94,6 +95,13 @@
 (write-line "Задача 22 Test 1")
 (princ " >> ( 1 2  3 4 5 6  7 8  9 ) ")
 (print(func-level '( 1 2  3 4 5 6  7 8  9 )))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Задача 22 Test 2")
+(princ " >> ( 1  2 ) ")
+(print(func-level '( 1  2 )))
 (write-line "")
 (write-line "")
 
