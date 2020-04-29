@@ -1,16 +1,40 @@
 ;;; Задача 3 
 ;;; Определите функцию, заменяющую в исходном списке все вхождения заданного значения другим.
-;;; (2 2 20 3 1 5 2 7 1 8) -> (1 1 10 3 1 5 1 7 1 8) 
+;;; (1 1 10 3 1 5 2 7 1 8) -> (2 2 10 3 2 5 2 7 2 8) 
 
-(defun change (val Change list)
-   (mapcar (lambda (arg)
-    (cond ((eq Change arg) val) 
-        (t arg))) list))
+(defun rep (lst pattern replaceWith)
+	(
+    	(lambda(head tail)
+    	
+            (cond 
+        		(
+        			(null lst)
+        			nil
+        		)
+        	    (
+        	        (eq head pattern) 
+        		    (cons replaceWith (rep tail pattern replaceWith))
+        		)
+    		    (t
+    		        (cons head (rep tail pattern replaceWith))
+    		    )
+    		)
+    	)
+    	(car lst)(cdr lst)
+	)
+)
 
 ;;; Test 1
 (write-line "Задача 3 Test 1")
-(princ " >> (2 2 20 3 1 5 2 7 1 8) ")
-(print(change 1 2 '(1 1 10 3 1 5 2 7 1 8)))    
+(princ " >> (1 1 10 3 1 5 2 7 1 8) ")
+(print (rep '(1 1 10 3 1 5 2 7 1 8) 1 '2))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Задача 3 Test 2")
+(princ " >> (12 1 31 1 1 18) ")
+(print (rep '(12 1 31 1 1 18) 1 'a))
 (write-line "")
 (write-line "")
 
