@@ -38,5 +38,41 @@
 (write-line "")
 (write-line "")
 
+;;; Задача 30
+;;; Запрограммируйте интерпретатор ВЫЧИСЛИ, который преобразует инфиксную запись 
+;;; операций в префиксную и возвращает значение выражения.
+;;; > ((-3 + 5) * 3) -> 6
 
+(defun prefix (lst)
+   (cond 
+		((null lst) nil)
+		((atom lst) lst)
+		(t
+			(list 
+				(prefix (cadr lst))
+				(prefix (car lst))
+				(prefix (caddr lst))
+			)
+		)
+	)
+)
+
+(defun calculate (lst)
+	(eval (prefix lst))
+)
+
+
+;;; Test 1
+(write-line "Задача 30 Test 1")
+(princ " >> ((-3 + 5) * 3) ")
+(print (calculate '((-3 + 5) * 3)))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Задача 30 Test 2")
+(princ " >> ((2 - 5 ) *  5 ) ")
+(print (calculate '((2 - 5 ) *  5 )))
+(write-line "")
+(write-line "")
 
