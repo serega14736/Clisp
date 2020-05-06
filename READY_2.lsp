@@ -47,7 +47,7 @@
 
 ;;; Test 2
 (write-line "Задача 6 Test 2")
-(princ " >> ( 1 3 4 a)")
+(princ " >> ( 1 3 4 1 4 10 b)")
 (print(del '( 1 3 4 1 4 10 b)))
 (write-line "")
 (write-line "")
