@@ -78,3 +78,19 @@
 (print (funcall c1))
 (write-line "")
 (write-line "")
+
+;;; 14 Задача
+;;; Определите функцию, которая возвращает в 
+;;; качестве значения форму своего определения (DEFUN).
+
+(defun progg (&rest rest)
+'(defun progg (&rest rest))
+)
+
+;;; Test 1
+(write-line "Задача 14 Test 1")
+(princ " >> (progg 'a 'b)")
+(print (progg 'a 'b))
+(write-line "")
+(write-line "")
+
