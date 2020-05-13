@@ -53,3 +53,14 @@
 
 (write-line "")
 (write-line "")
+
+;;; 12 Определите функцию, которая возвращает в качестве значения свой вызов.
+
+(defun self (&rest rest)
+	(append '(self) rest)
+)
+       
+;;; Test 1
+(write-line "Задача 12 Test 1")
+(princ ">> (self 1 2)")
+(print (self 1 2)) 
