@@ -15,8 +15,11 @@
 
 ;;; Test 1
 (write-line "Задача 2 Test 1")
-(setq stack `(1 2 3))
+(setq stack `(1 2 3 4 5 6))
 
+(print (top stack))
+(print (top stack))
+(print (top stack))
 (print (top stack))
 (print (top stack))
 (print (top stack))
