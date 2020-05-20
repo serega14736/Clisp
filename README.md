@@ -58,21 +58,21 @@ fun = isDigit :: Char -> Bool
 
 Вы должны передать функции переменные правильных типов, иначе компилятор отвергнет программу:
 
-```
+```Haskell
 Type error
 isDigit 1
 ```
 
 Вы можете декодировать байты в текст:
 
-```
+```Haskell
 bytes = Crypto.Hash.SHA1.hash "hello" :: ByteString
 text = decodeUtf8 bytes               :: Text
 ```
 
 Но вы не можете декодировать текст, которые уже является последовательностью символов Unicode:
 
-```
+```Haskell
 Type error
 doubleDecode = decodeUtf8 (decodeUtf8 bytes)
 ```
@@ -81,7 +81,7 @@ doubleDecode = decodeUtf8 (decodeUtf8 bytes)
 Не обязательно явно назначать тип каждой переменной в Haskell. Типы будут назначены двунаправленной унификацией типов. Однако вы можете обозначить типы, которые выберете, или попросить компилятор обозначит их за вас для легкодоступной документации.
 
 В данном примере для каждой связи есть сигнатура типа:
-```
+```Haskell
 main :: IO ()
 main = do line :: String <- getLine
           print (parseDigit line)
@@ -93,7 +93,7 @@ main = do line :: String <- getLine
 ```
 
 Но вы можете просто написать следующее:
-```
+```Haskell
 main = do line <- getLine
           print (parseDigit line)
   where parseDigit (c : _) =
@@ -104,7 +104,7 @@ main = do line <- getLine
 
 Также можно использовать вывод типов во избежание траты времени, объясняя, чего вы хотите:
 
-```
+```Haskell
 do ss <- decode "[\"Hello!\",\"World!\"]"
    is <- decode "[1,2,3]"
    return (zipWith (\s i -> s ++ " " ++ show (i + 5)) ss is)
@@ -113,7 +113,7 @@ do ss <- decode "[\"Hello!\",\"World!\"]"
  
  Типы независимо определяют спецификацию синтаксического анализатора, следующий ввод не приемлем:
 
-```
+```Haskell
 do ss <- decode "[1,2,3]"
    is <- decode "[null,null,null]"
    return (zipWith (\s i -> s ++ " " ++ show (i + 5)) ss is)
