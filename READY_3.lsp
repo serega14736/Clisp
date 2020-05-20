@@ -43,3 +43,33 @@
 
 (write-line "")
 (write-line "")
+
+;;; 4. Определите в виде макроса форму (FIF тест отр нуль полож).
+
+(defmacro FIF (test a b p)
+  `(cond
+     ((< ,test 0) ,a)
+     ((= ,test 0) ,b)
+     (t ,p)))
+
+
+;;; Test 1
+(write-line "Задача 4 Test 1")
+(princ " >> 1 '- '= '+")
+(print (FIF 1 '- '= '+))
+(write-line "")
+(write-line "")
+
+;;; Test 2
+(write-line "Задача 4 Test 2")
+(princ " >> -2 '- '= '+")
+(print (FIF -2 '- '= '+))
+(write-line "")
+(write-line "")
+
+;;; Test 3
+(write-line "Задача 4 Test 2")
+(princ " >> 0 '- '= '+")
+(print (FIF 0 '- '= '+))
+(write-line "")
+(write-line "")
