@@ -73,3 +73,12 @@
 (print (FIF 0 '- '= '+))
 (write-line "")
 (write-line "")
+
+;;; 5. Определите в виде макроса форму (REPEAT e UNTIL p) паскалевского типа.
+(defmacro repeat (a until b)
+    `(if ,b nil
+        (and (print ,a) (repeat ,a until ,b))
+    )
+)
+ 
+(let ((i 0)) (repeat  (incf i) until (>= i 5)))
