@@ -84,4 +84,6 @@
     )
 )
  
+(write-line "Задача 5 Test 1") 
 (let ((i 0)) (repeat  (incf i) until (>= i 5)))
+
