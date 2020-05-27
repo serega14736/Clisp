@@ -374,3 +374,5 @@ Hello World!
 [Учебник по Haskell](https://anton-k.github.io/ru-haskell-book/book/home.html)
 
 [Русскоязычное сообщество Haskell-разработчиков](https://ruhaskell.org/)
+
+[Полезные ссылки](https://ruhaskell.org/links.html)
