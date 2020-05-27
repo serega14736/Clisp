@@ -366,3 +366,7 @@ Hello World!
 ~ runhaskell 00_hello_world.lhs
 Hello World!
 ```
+
+
+# Литература #
+(Оффициальный сайт)[!https://www.haskell.org/]
