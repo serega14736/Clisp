@@ -369,4 +369,4 @@ Hello World!
 
 
 # Литература #
-(Оффициальный сайт)[!https://www.haskell.org/]
+[Оффициальный сайт](https://www.haskell.org/)
