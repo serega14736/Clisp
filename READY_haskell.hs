@@ -16,6 +16,6 @@ mergelst (x:xs) y = x : mergelst y xs
 
 main = do
 print $ mergelst ["1", "2", "3"] ["a", "b", "c"]
-print $ mergelst ["1", "2", "3"] ["a"]
+print $ mergelst ["4", "1", "2"] ["x"]
 --["1","a","2","b","3","c"]
---["1","a","2","3"]
+--["4","x","1","2"]
