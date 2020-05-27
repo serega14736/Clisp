@@ -369,4 +369,5 @@ Hello World!
 
 
 # Литература #
-[Оффициальный сайт](https://www.haskell.org/)
+[Оффициальный сайт Haskell](https://www.haskell.org/)
+[Учебник по Haskell](https://anton-k.github.io/ru-haskell-book/book/home.html)
